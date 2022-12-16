@@ -1,0 +1,15 @@
+mengubah maspos ke nuxt dengan api
+https://api.pos.var-x.id/docs
+user/pass training
+
+{
+  "email": "admin@example.com",
+  "password": "secret"
+}
+
+pakai nuxt auth
+https://auth.nuxtjs.org/
+
+nuxt axios
+
+keranjang menggunakan vuex
