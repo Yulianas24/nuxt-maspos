@@ -1,11 +1,18 @@
 <template>
   <div class="pt-24">
-    <!-- Toast -->
+      <!-- Product Toast -->
+  <div v-if="$store.state.products.toast" class="fixed z-10 bg-[#36B37E] top-[8%] py-4 px-6 inline-flex text-sm text-white w-[60%] mx-[20%] justify-center">
+    <img src="@/assets/img/Info.svg" alt="">
+    <p class="text-base font-semibold">Add product success!</p>
+  </div>
+  <!-- End of Product Toast -->
+
+    <!-- Cart Toast -->
     <div v-if="show" class="fixed bg-[#36B37E] top-[11%] py-4 px-6 inline-flex text-sm text-white w-[60%] mx-[20%] justify-center">
       <img src="@/assets/img/Info.svg" alt="">
       <p class="text-base font-semibold">Added to cart</p>
     </div>
-    <!-- End of toast -->
+    <!-- End of Cart Toast -->
     <div class="menu-bar px-32 mt-5 flex justify-end">
       <nuxt-link to="/add-category" class="btn bg-[#B3D4FF99] text-[#0052CC] mr-3">+Add Category</nuxt-link>
       <nuxt-link to="/add-product" class="btn bg-[#B3D4FF99] text-[#0052CC] mr-3">+Add Products</nuxt-link>

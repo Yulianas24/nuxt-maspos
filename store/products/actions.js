@@ -10,7 +10,6 @@ export default {
   },
   // Menambahkan data
   async store({ commit }, product){
-    commit("showToast")
     const fd = new FormData()
     fd.append('category_id', product.category_id)
     fd.append('name', product.name)
@@ -18,15 +17,16 @@ export default {
     fd.append('picture', product.picture, product.picture.name)
     await this.$axios.post('/product', fd)
     .then(()=>{
-        setTimeout(() => {
-          commit("hideToast")
-          this.$router.push({
-            name: 'index'
-          })
-        }, 1000)
-      }).catch(error => {
-        console.log(error.response.data)
+      this.$router.push({
+        name: 'index'
       })
+      commit("showToast")
+      setTimeout(() => {
+        commit("hideToast")
+      }, 1000)
+    }).catch(error => {
+      console.log(error.response.data)
+    })
   },
   // Menghapus data
   deleteProduct({ commit }, id){

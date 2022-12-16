@@ -1,11 +1,6 @@
 <template>
 <section class="pt-24">
-  <!-- Toast -->
-  <div v-if="toast" class="fixed z-10 bg-[#36B37E] top-[8%] py-4 px-6 inline-flex text-sm text-white w-[60%] mx-[20%] justify-center">
-    <img src="@/assets/img/Info.svg" alt="">
-    <p class="text-base font-semibold">Add product success!</p>
-  </div>
-  <!-- End of toast -->
+
   <form @submit.prevent="store" action="/add-product" method="POST" enctype="multipart/form-data">
     <div class="w-[900px] mt-5 h-[500px] mx-auto">
       <h1 class="font-bold mb-4">Add Product</h1>
